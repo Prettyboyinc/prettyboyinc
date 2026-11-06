@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pretty Boy Inc | Vegan, Sulphate-Free Skincare</title>
+  <meta name="description" content="Pretty Boy Inc makes vegan, sulphate-free skincare with natural, fresh extracts.">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* EDIT: change these colours to match your brand */
+    :root {
+      --bg: #fffbe6;
+      --surface: #fffdf2;
+      --ink: #2b2410;
+      --muted: #665c3c;
+      --line: #eee1a4;
+      --accent: #ffd93d;      /* sunny yellow */
+      --accent-2: #ffb800;    /* golden yellow */
+      --focus: #9a6700;
+      --on-accent: #2b2410;
+      --display: "Bricolage Grotesque", Georgia, serif;
+      --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1b1708;
+        --surface: #262010;
+        --ink: #fdf6d6;
+        --muted: #cdc189;
+        --line: #4a4118;
+        --accent: #ffe066;
+        --accent-2: #ffc933;
+        --focus: #ffe066;
+        --on-accent: #2b2410;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.5rem; }
+
+    header { border-bottom: 1px solid var(--line); border-top: 6px solid transparent; border-image: linear-gradient(90deg, var(--accent), var(--accent-2)) 1; }
+    header .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 1.1rem; padding-bottom: 1.1rem; gap: 1rem; flex-wrap: wrap; }
+    .logo { display: flex; align-items: center; gap: .75rem; font: 700 1.3rem var(--display); text-decoration: none; }
+    /* EDIT: change 44px to make your logo bigger or smaller */
+    .logo img { height: 44px; width: auto; display: block; }
+    nav { display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; color: var(--muted); font-weight: 500; }
+    nav a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent-2); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+    .hero { padding: clamp(3.5rem, 10vw, 7.5rem) 0 clamp(3rem, 8vw, 6rem); }
+    .hero h1 { font: 700 clamp(2.4rem, 7vw, 5rem)/1.04 var(--display); letter-spacing: -0.02em; margin: 0 0 1.5rem; max-width: 15ch; }
+    .hero p { font-size: 1.25rem; color: var(--muted); max-width: 38rem; margin: 0 0 2.25rem; }
+    .btn { display: inline-block; padding: .9rem 1.6rem; border-radius: 6px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: var(--on-accent); font-weight: 500; text-decoration: none; }
+    .btn:hover { filter: brightness(1.1); }
+    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); margin-left: .5rem; }
+
+    section { padding: clamp(3rem, 7vw, 5rem) 0; border-top: 1px solid var(--line); }
+    h2 { font: 700 clamp(1.7rem, 4vw, 2.4rem)/1.15 var(--display); margin: 0 0 2.5rem; letter-spacing: -0.01em; }
+
+    .row { display: grid; grid-template-columns: 1fr 1.6fr; gap: 1rem 3rem; padding: 1.75rem 0; border-top: 1px solid var(--line); }
+    .row:last-child { border-bottom: 1px solid var(--line); }
+    .row h3 { font: 500 1.35rem/1.3 var(--display); margin: 0; }
+    .row p { margin: 0; color: var(--muted); max-width: 40rem; }
+
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .about p { margin: 0 0 1rem; max-width: 36rem; }
+    .facts { list-style: none; margin: 0; padding: 0; }
+    .facts li { padding: 1rem 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 1rem; }
+    .facts li:last-child { border-bottom: 1px solid var(--line); }
+    .facts span { color: var(--muted); }
+
+    .contact { background: var(--surface); }
+    .contact p { max-width: 34rem; color: var(--muted); margin: 0 0 1.5rem; }
+
+    footer { padding: 2rem 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+
+    @media (max-width: 720px) {
+      .row, .about { grid-template-columns: 1fr; }
+      .btn.ghost { margin: .75rem 0 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <!-- Upload logo.png and logo-dark.png (the light version used in dark mode) next to this file. -->
+    <a class="logo" href="#top">
+      <picture>
+        <source srcset="logo-dark.png" media="(prefers-color-scheme: dark)">
+        <img src="logo.png" alt="Pretty Boy Inc logo">
+      </picture>
+      <span>Pretty Boy Inc</span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#promise">Our promise</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Skincare made from fresh, natural extracts.</h1>
+    <p>Pretty Boy Inc is a vegan, sulphate-free skincare brand. We keep our formulas simple and focus on ingredients that are natural and fresh.</p>
+    <a class="btn" href="#contact">Get in touch</a>
+    <a class="btn ghost" href="#promise">What we stand for</a>
+  </div>
+
+  <section id="promise">
+    <div class="wrap">
+      <h2>What we stand for</h2>
+      <div class="row">
+        <h3>100% vegan</h3>
+        <p>Nothing in our products comes from animals, and nothing is tested on them.</p>
+      </div>
+      <div class="row">
+        <h3>Sulphate free</h3>
+        <p>We leave out harsh sulphates, so our products clean and care for your skin without stripping it.</p>
+      </div>
+      <div class="row">
+        <h3>Natural, fresh extracts</h3>
+        <p>Our formulas are built around plant extracts that are natural and fresh, so you know what you are putting on your skin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About us</h2>
+        <!-- EDIT: add your own story here -->
+        <p>Pretty Boy Inc was founded in 2026 to make skincare that is kind to your skin and free of harsh ingredients.</p>
+        <p>We believe good skincare should be simple, natural and honest about what is inside.</p>
+      </div>
+      <ul class="facts">
+        <li>Founded <span>2026</span></li>
+        <li>Formulas <span>Vegan</span></li>
+        <li>Sulphates <span>None</span></li>
+        <li>Ingredients <span>Natural, fresh extracts</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact us</h2>
+      <p>Questions about our products or want to stock them? Send us a message and we will get back to you.</p>
+      <!-- EDIT: your real email address -->
+      <a class="btn" href="mailto:hello@prettyboyinc.com">hello@prettyboyinc.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Pretty Boy Inc. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
